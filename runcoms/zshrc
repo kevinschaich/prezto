@@ -48,6 +48,8 @@ alias rd="rm -rfv"
 alias hd="head"
 alias tl="tail"
 alias zapem="gs | grep DS_Store | awk '{print $2}' | xargs git checkout"
+alias yarn-work="yarn config delete registry -g"
+alias yarn-public="yarn config set registry "https://registry.yarnpkg.com" -g"
 function kp { ps -ef | grep "$@" | awk '{print $2}' | xargs sudo kill }
 function hide(){
     defaults write com.apple.finder AppleShowAllFiles -bool NO
@@ -57,3 +59,8 @@ function show(){
     defaults write com.apple.finder AppleShowAllFiles -bool YES
     killall Finder
 }
+
+# Docker aliases
+alias dcu='docker-compose up -d'
+alias dcps='docker-compose ps'
+alias bedrock="osascript ~/Desktop/scripts/bedrock.scpt"
